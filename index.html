@@ -1,0 +1,825 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Ripay Creations
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Inter', sans-serif;
+      scroll-padding-top: 5rem; /* height of fixed header */
+    }
+   /* Hide scrollbar for all browsers */
+   #carousel::-webkit-scrollbar {
+     display: none;
+   }
+   #carousel {
+     -ms-overflow-style: none;  /* IE and Edge */
+     scrollbar-width: none;  /* Firefox */
+   }
+   /* Disable hover effect on active buttons */
+   #projectFilter button.active:hover {
+     background-color: #ea580c; /* Tailwind's orange-500 */
+     color: white;
+     cursor: default;
+   }
+  </style>
+ </head>
+ <body class="bg-[#e9f0ef] text-gray-800">
+  <header class="bg-white shadow-sm sticky top-0 z-50 h-20 flex items-center">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <div class="flex justify-between items-center h-16">
+     <div class="flex items-center space-x-6">
+      <a class="text-orange-500 font-semibold text-lg cursor-pointer" id="logoLink" href="#top">
+       Ripay Creations
+      </a>
+      <nav class="hidden md:flex space-x-6 text-xs font-semibold text-gray-700">
+       <a class="hover:text-orange-500" href="#top" id="homeLink">
+        Home
+       </a>
+       <a class="hover:text-orange-500" href="#interior-design-services">
+        Services
+       </a>
+       <a class="hover:text-orange-500" href="#packages-section">
+        Packages
+       </a>
+       <a class="hover:text-orange-500" href="#project-gallery">
+        Gallery
+       </a>
+       <a class="hover:text-orange-500" href="#testimonial-section">
+        Testimonials
+       </a>
+       <a class="hover:text-orange-500" href="#contact-section">
+        Contact
+       </a>
+      </nav>
+     </div>
+     <div>
+      <a class="bg-orange-500 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-orange-600 transition cursor-pointer" id="openModalHeader">
+       Free Consultation
+      </a>
+     </div>
+    </div>
+   </div>
+  </header>
+  <main id="top" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+   <!-- Hero Section -->
+   <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="md:col-span-2 bg-[#e9f0ef] rounded-lg p-6 flex flex-col justify-center">
+     <h1 class="text-gray-900 font-extrabold text-2xl sm:text-3xl leading-tight mb-3">
+      Transform Your Home
+      <br/>
+      into a
+      <span class="text-orange-500">
+       Dream Space
+      </span>
+     </h1>
+     <p class="text-gray-600 text-sm sm:text-base max-w-xl mb-6">
+      Experience interior design solutions that blend modern aesthetics with functional and innovative ideas. Create the perfect living spaces that reflect your unique style.
+     </p>
+     <div class="flex flex-wrap gap-3">
+      <a class="bg-orange-500 text-white text-xs sm:text-sm font-semibold px-5 py-2 rounded-md hover:bg-orange-600 transition cursor-pointer" id="openModal">
+       Get Free Consultation
+      </a>
+      <a class="border border-gray-300 text-gray-700 text-xs sm:text-sm font-semibold px-5 py-2 rounded-md hover:bg-gray-100 transition" href="#interior-design-services" style="">
+       Explore Services
+      </a>
+     </div>
+    </div>
+    <div class="relative bg-[#e9f0ef] rounded-lg flex items-center justify-center overflow-hidden" style="height: 320px;">
+     <div id="carousel" class="flex w-full snap-x snap-mandatory overflow-x-auto scroll-smooth" style="scroll-behavior: smooth; scroll-padding-left: 0;">
+      <img alt="Modern living room with stylish furniture and warm lighting" class="rounded-lg object-cover flex-shrink-0 snap-center" height="320" src="https://storage.googleapis.com/a1aa/image/3ee4b55f-e6bd-4a9c-c390-f9f3f29b334f.jpg" style="width: 700px; height: 320px;" width="700"/>
+      <img alt="Cozy living room with modern furniture and warm lighting" class="rounded-lg object-cover flex-shrink-0 snap-center" height="320" src="https://storage.googleapis.com/a1aa/image/8d5e4871-af88-4a47-f1aa-bf56899463a6.jpg" style="width: 700px; height: 320px;" width="700"/>
+      <img alt="Stylish bedroom interior with modern furniture and soft lighting" class="rounded-lg object-cover flex-shrink-0 snap-center" height="320" src="https://storage.googleapis.com/a1aa/image/3ae8c51d-d76f-429f-eb0c-4402b60898d2.jpg" style="width: 700px; height: 320px;" width="700"/>
+     </div>
+     <button aria-label="Previous slide" class="absolute left-3 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-100 text-gray-600 rounded-full p-2 shadow" id="prevBtn" style="user-select:none;">
+      <i class="fas fa-chevron-left">
+      </i>
+     </button>
+     <button aria-label="Next slide" class="absolute right-3 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-100 text-gray-600 rounded-full p-2 shadow" id="nextBtn" style="user-select:none;">
+      <i class="fas fa-chevron-right">
+      </i>
+     </button>
+     <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex space-x-2 text-gray-400 text-xs" id="dots">
+      <span class="w-2 h-2 rounded-full bg-gray-400 cursor-pointer" data-index="0">
+      </span>
+      <span class="w-2 h-2 rounded-full bg-gray-300 cursor-pointer" data-index="1">
+      </span>
+      <span class="w-2 h-2 rounded-full bg-gray-300 cursor-pointer" data-index="2">
+      </span>
+     </div>
+    </div>
+   </section>
+   <!-- Stats Section -->
+   <section class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center text-xs sm:text-sm text-gray-700">
+    <div class="bg-white rounded-md py-4 shadow-sm flex flex-col items-center">
+     <i class="fas fa-building text-orange-500 text-xl mb-1">
+     </i>
+     <span class="font-semibold">
+      2022 - Ripay Creations
+     </span>
+    </div>
+    <div class="bg-white rounded-md py-4 shadow-sm flex flex-col items-center">
+     <i class="fas fa-chart-line text-orange-500 text-xl mb-1">
+     </i>
+     <span class="font-semibold">
+      4.9/5 Client Rating
+     </span>
+    </div>
+    <div class="bg-white rounded-md py-4 shadow-sm flex flex-col items-center">
+     <i class="fas fa-truck text-orange-500 text-xl mb-1">
+     </i>
+     <span class="font-semibold">
+      On-time Delivery
+     </span>
+    </div>
+    <div class="bg-white rounded-md py-4 shadow-sm flex flex-col items-center">
+     <i class="fas fa-shield-alt text-orange-500 text-xl mb-1">
+     </i>
+     <span class="font-semibold">
+      5-year Warranty
+     </span>
+    </div>
+   </section>
+   <!-- Interior Design Services -->
+   <section id="interior-design-services" class="mt-16 scroll-mt-20">
+    <h2 class="text-center text-gray-900 font-semibold text-lg sm:text-xl mb-1">
+     Our Interior Design Services
+    </h2>
+    <p class="text-center text-gray-600 text-xs sm:text-sm max-w-2xl mx-auto mb-8">
+     Comprehensive interior design solutions for every room to nurture comforting functionality with aesthetic appeal.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+     <!-- Service Card 1 -->
+     <a href="modular_kitchen.html" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+      <img alt="Modern modular kitchen with wooden cabinets and white countertops" class="w-full h-40 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/b2498052-bb19-407c-d59a-cfacc2fc0072.jpg" width="600"/>
+      <div class="p-4">
+       <h3 class="text-orange-500 font-semibold text-sm mb-1 flex items-center gap-2">
+        <i class="fas fa-cubes">
+        </i>
+        Modular Kitchen
+       </h3>
+       <p class="text-gray-700 text-xs sm:text-sm mb-2">
+        Space-efficient kitchen designs with premium materials and smart storage solutions tailored to your cooking style.
+       </p>
+       <div class="text-orange-500 text-xs font-semibold hover:underline" style="display:inline-block;">
+        Learn More →
+       </div>
+      </div>
+     </a>
+     <!-- Service Card 2 -->
+     <a href="living-room-makeovers.html" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+      <img alt="Cozy living room with modern furniture and warm lighting" class="w-full h-40 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/8d5e4871-af88-4a47-f1aa-bf56899463a6.jpg" width="600"/>
+      <div class="p-4">
+       <h3 class="text-orange-500 font-semibold text-sm mb-1 flex items-center gap-2">
+        <i class="fas fa-couch">
+        </i>
+        Living Room Makeovers
+       </h3>
+       <p class="text-gray-700 text-xs sm:text-sm mb-2">
+        Transform your living space with elegant furniture arrangements, cozy cushions, and ambient lighting for comfort and style.
+       </p>
+       <div class="text-orange-500 text-xs font-semibold hover:underline" style="display:inline-block;">
+        Learn More →
+       </div>
+      </div>
+     </a>
+     <!-- Service Card 3 -->
+     <a href="bedroom-interiors.html" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+      <img alt="Stylish bedroom interior with modern furniture and soft lighting" class="w-full h-40 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/3ae8c51d-d76f-429f-eb0c-4402b60898d2.jpg" width="600"/>
+      <div class="p-4">
+       <h3 class="text-orange-500 font-semibold text-sm mb-1 flex items-center gap-2">
+        <i class="fas fa-bed">
+        </i>
+        Bedroom Interiors
+       </h3>
+       <p class="text-gray-700 text-xs sm:text-sm mb-2">
+        Create serene and relaxing bedroom spaces with comfortable bedding, ambient lighting, and personalized decor elements.
+       </p>
+       <div class="text-orange-500 text-xs font-semibold hover:underline" style="display:inline-block;">
+        Learn More →
+       </div>
+      </div>
+     </a>
+     <!-- Service Card 4 -->
+     <a href="pooja-room.html" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+      <img alt="Traditional pooja room with wooden carvings and religious artifacts" class="w-full h-40 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/ae6fdc5e-d650-4013-c3b6-18d48ac3d289.jpg" width="600"/>
+      <div class="p-4">
+       <h3 class="text-orange-500 font-semibold text-sm mb-1 flex items-center gap-2">
+        <i class="fas fa-praying-hands">
+        </i>
+        Pooja Room
+       </h3>
+       <p class="text-gray-700 text-xs sm:text-sm mb-2">
+        Design a tranquil and sacred space for worship with beautiful woodwork, soft lighting, and spiritual decor.
+       </p>
+       <div class="text-orange-500 text-xs font-semibold hover:underline" style="display:inline-block;">
+        Learn More →
+       </div>
+      </div>
+     </a>
+     <!-- Service Card 5 -->
+     <a href="modular-wardrobe.html" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+      <img alt="Modern modular wardrobe with sliding doors and organized shelves" class="w-full h-40 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/82aa86c7-20ae-4fc2-915c-84d2ad8ec7e4.jpg" width="600"/>
+      <div class="p-4">
+       <h3 class="text-orange-500 font-semibold text-sm mb-1 flex items-center gap-2">
+        <i class="fas fa-warehouse">
+        </i>
+        Modular Wardrobe
+       </h3>
+       <p class="text-gray-700 text-xs sm:text-sm mb-2">
+        Customizable wardrobes with optimized compartments, ample storage, and sleek finishes to keep your space neat and stylish.
+       </p>
+       <div class="text-orange-500 text-xs font-semibold hover:underline" style="display:inline-block;">
+        Learn More →
+       </div>
+      </div>
+     </a>
+     <!-- Service Card 6 -->
+     <a href="tv-cabinets.html" class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+      <img alt="Contemporary TV cabinet with shelves and storage units" class="w-full h-40 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/4f74d917-6c8d-4db1-4cba-87f6fb89551a.jpg" width="600"/>
+      <div class="p-4">
+       <h3 class="text-orange-500 font-semibold text-sm mb-1 flex items-center gap-2">
+        <i class="fas fa-tv">
+        </i>
+        TV Cabinets
+       </h3>
+       <p class="text-gray-700 text-xs sm:text-sm mb-2">
+        Stylish and functional TV cabinets with ample storage and cable management to enhance your entertainment area.
+       </p>
+       <div class="text-orange-500 text-xs font-semibold hover:underline" style="display:inline-block;">
+        Learn More →
+       </div>
+      </div>
+     </a>
+    </div>
+   </section>
+   <!-- Packages Section -->
+   <section id="packages-section" class="mt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20">
+    <h2 class="text-center text-gray-900 font-semibold text-lg sm:text-xl mb-1">
+     Budget-Friendly Packages
+    </h2>
+    <p class="text-center text-gray-600 text-xs sm:text-sm max-w-2xl mx-auto mb-10">
+     Choose the perfect package that aligns with your requirements and budget constraints.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+     <!-- Basic Package -->
+     <div class="bg-white rounded-lg shadow-md p-6 text-center text-xs sm:text-sm flex flex-col">
+      <h3 class="font-semibold mb-2">
+       Basic Package
+      </h3>
+      <p class="text-orange-500 font-bold text-lg mb-4">
+       ₹849/sq.ft
+      </p>
+      <p class="text-gray-600 mb-6 text-[10px] sm:text-xs">
+       Suitable for small to medium spaces
+      </p>
+      <ul class="text-left mb-6 space-y-1 list-disc list-inside text-gray-700 flex-grow">
+       <li>
+        Standard modular kitchen
+       </li>
+       <li>
+        Wooden living room setup
+       </li>
+       <li>
+        Simple bedroom furniture
+       </li>
+       <li>
+        3-year warranty
+       </li>
+       <li>
+        Basic material selection
+       </li>
+      </ul>
+      <button class="bg-green-700 text-white text-xs sm:text-sm font-semibold px-6 py-2 rounded-md hover:bg-green-800 transition w-full mt-auto">
+       Get Started
+      </button>
+     </div>
+     <!-- Value Package -->
+     <div class="bg-white rounded-lg shadow-md p-6 text-center text-xs sm:text-sm border-2 border-orange-500 relative flex flex-col">
+      <div class="absolute -top-3 right-3 bg-orange-500 text-white text-[9px] sm:text-xs font-semibold px-2 py-1 rounded">
+       POPULAR
+      </div>
+      <h3 class="font-semibold mb-2">
+       Value Package
+      </h3>
+      <p class="text-orange-500 font-bold text-lg mb-4">
+       ₹1,249/sq.ft
+      </p>
+      <p class="text-gray-600 mb-6 text-[10px] sm:text-xs">
+       Best value for complete homes
+      </p>
+      <ul class="text-left mb-6 space-y-1 list-disc list-inside text-gray-700 flex-grow">
+       <li>
+        Premium modular kitchen
+       </li>
+       <li>
+        Designer TV unit with storage
+       </li>
+       <li>
+        Advanced living room
+       </li>
+       <li>
+        Floor wall design
+       </li>
+       <li>
+        Premium materials and finishes
+       </li>
+       <li>
+        5-year warranty
+       </li>
+      </ul>
+      <button class="bg-orange-500 text-white text-xs sm:text-sm font-semibold px-6 py-2 rounded-md hover:bg-orange-600 transition w-full mt-auto">
+       Get Started
+      </button>
+     </div>
+     <!-- Premium Package -->
+     <div class="bg-white rounded-lg shadow-md p-6 text-center text-xs sm:text-sm flex flex-col">
+      <h3 class="font-semibold mb-2">
+       Premium Package
+      </h3>
+      <p class="text-orange-500 font-bold text-lg mb-4">
+       ₹1,849/sq.ft
+      </p>
+      <p class="text-gray-600 mb-6 text-[10px] sm:text-xs">
+       Luxurious and premium designs
+      </p>
+      <ul class="text-left mb-6 space-y-1 list-disc list-inside text-gray-700 flex-grow">
+       <li>
+        Luxury modular kitchen
+       </li>
+       <li>
+        Custom-made wardrobes
+       </li>
+       <li>
+        Wall unit wardrobes
+       </li>
+       <li>
+        Designer pooja room
+       </li>
+       <li>
+        Premium flooring
+       </li>
+       <li>
+        Free full home interiors
+       </li>
+      </ul>
+      <button class="bg-green-700 text-white text-xs sm:text-sm font-semibold px-6 py-2 rounded-md hover:bg-green-800 transition w-full mt-auto">
+      Get Started
+      </button>
+     </div>
+    </div>
+   </section>
+   <!-- Project Gallery -->
+   <section id="project-gallery" class="mt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20">
+    <h2 class="text-center text-gray-900 font-semibold text-lg sm:text-xl mb-1">
+     Our Project Gallery
+    </h2>
+    <p class="text-center text-gray-600 text-xs sm:text-sm max-w-2xl mx-auto mb-6">
+     Explore our completed projects across 6 modern home types and design styles.
+    </p>
+    <div class="flex justify-center space-x-3 mb-6 text-xs sm:text-sm" id="projectFilter">
+     <button class="bg-orange-500 text-white rounded-full px-4 py-1 font-semibold" data-filter="all">
+      All Projects
+     </button>
+     <button class="bg-gray-200 text-gray-700 rounded-full px-4 py-1 font-semibold" data-filter="2bhk">
+      2BHK
+     </button>
+     <button class="bg-gray-200 text-gray-700 rounded-full px-4 py-1 font-semibold" data-filter="3bhk">
+      3BHK
+     </button>
+     <button class="bg-gray-200 text-gray-700 rounded-full px-4 py-1 font-semibold" data-filter="villa">
+      Villa
+     </button>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6" id="projectGrid">
+     <!-- Project 1 - Villa -->
+     <div class="bg-white rounded-lg shadow-md overflow-hidden project-item" data-category="villa">
+      <img alt="3BHK contemporary living room with modern furniture and decor" class="w-full h-40 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/a38266ec-0c46-43ae-9618-f16b7ca58f8e.jpg" width="600"/>
+      <div class="p-3 text-xs sm:text-sm text-gray-700 font-semibold">
+        Villa 3BHK Contemporary Living Room 
+      </div>
+     </div>
+     <!-- Project 2 - Villa -->
+     <div class="bg-white rounded-lg shadow-md overflow-hidden project-item" data-category="villa">
+      <img alt="3BHK contemporary villa kitchen with modern appliances and wooden cabinets" class="w-full h-40 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/c92a7c8b-3d6f-4946-d257-5dc17582a7d6.jpg" width="600"/>
+      <div class="p-3 text-xs sm:text-sm text-gray-700 font-semibold">
+      Villa 3BHK Contemporary 
+      </div>
+     </div>
+     <!-- Project 3 - 2BHK -->
+     <div class="bg-white rounded-lg shadow-md overflow-hidden project-item" data-category="2bhk">
+      <img alt="3BHK modern kitchen with sleek cabinets and island" class="w-full h-40 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/3da59ff3-4a9c-4d2e-2372-1bc4bd0cb2ba.jpg" width="600"/>
+      <div class="p-3 text-xs sm:text-sm text-gray-700 font-semibold">
+       2BHK Modern Kitchen
+      </div>
+     </div>
+     <!-- Project 4 - 2BHK -->
+     <div class="bg-white rounded-lg shadow-md overflow-hidden project-item" data-category="2bhk">
+      <img alt="3BHK bedroom interiors with cozy bed and ambient lighting" class="w-full h-40 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/3027cb9d-b107-4ca8-d417-6ce7a4725ea4.jpg" width="600"/>
+      <div class="p-3 text-xs sm:text-sm text-gray-700 font-semibold">
+       2BHK Bedroom Interiors
+      </div>
+     </div>
+     <!-- Project 5 - 2BHK -->
+     <div class="bg-white rounded-lg shadow-md overflow-hidden project-item" data-category="2bhk">
+      <img alt="3BHK luxury apartment living room with large windows and elegant furniture" class="w-full h-40 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/e9d8e91c-6b36-4660-67cb-e6b5c0756bf3.jpg" width="600"/>
+      <div class="p-3 text-xs sm:text-sm text-gray-700 font-semibold">
+       2BHK Luxury Apartment
+      </div>
+     </div>
+     <!-- Project 6 - 2BHK -->
+     <div class="bg-white rounded-lg shadow-md overflow-hidden project-item" data-category="2bhk">
+      <img alt="3BHK modern closets with organized shelves and drawers" class="w-full h-40 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/e4256d7b-36a2-40f9-933e-614884a2c72b.jpg" width="600"/>
+      <div class="p-3 text-xs sm:text-sm text-gray-700 font-semibold">
+       2BHK Modern Closets
+      </div>
+     </div>
+     <!-- Project 7 - 3BHK -->
+     <div class="bg-white rounded-lg shadow-md overflow-hidden project-item" data-category="3bhk">
+      <img alt="3BHK luxury apartment living room with large windows and elegant furniture" class="w-full h-40 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/e9d8e91c-6b36-4660-67cb-e6b5c0756bf3.jpg" width="600"/>
+      <div class="p-3 text-xs sm:text-sm text-gray-700 font-semibold">
+       3BHK Luxury Apartment
+      </div>
+     </div>
+     <!-- Project 8 - 3BHK -->
+     <div class="bg-white rounded-lg shadow-md overflow-hidden project-item" data-category="3bhk">
+      <img alt="3BHK modern closets with organized shelves and drawers" class="w-full h-40 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/e4256d7b-36a2-40f9-933e-614884a2c72b.jpg" width="600"/>
+      <div class="p-3 text-xs sm:text-sm text-gray-700 font-semibold">
+       3BHK Modern Closets
+      </div>
+     </div>
+     <!-- Project 9 - 3BHK -->
+     <div class="bg-white rounded-lg shadow-md overflow-hidden project-item" data-category="3bhk">
+      <img alt="3BHK bedroom interiors with cozy bed and ambient lighting" class="w-full h-40 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/3027cb9d-b107-4ca8-d417-6ce7a4725ea4.jpg" width="600"/>
+      <div class="p-3 text-xs sm:text-sm text-gray-700 font-semibold">
+       3BHK Bedroom Interiors
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Testimonials -->
+   <section id="testimonial-section" class="mt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20">
+    <h2 class="text-center text-gray-900 font-semibold text-lg sm:text-xl mb-1">
+     What Our Clients Say
+    </h2>
+    <p class="text-center text-gray-600 text-xs sm:text-sm max-w-2xl mx-auto mb-10">
+     Hear from our satisfied customers about their experience with Ripay Creations.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+     <!-- Testimonial 1 -->
+     <div class="bg-gray-100 rounded-lg p-6 text-xs sm:text-sm text-gray-700">
+      <div class="flex items-center mb-3">
+       <img alt="Rajesh Sharma profile picture" class="rounded-full mr-3" height="40" src="https://storage.googleapis.com/a1aa/image/a6c3d322-ec0d-4c44-cbc8-9f9400040ff4.jpg" width="40"/>
+       <div>
+        <p class="font-semibold text-gray-900">
+         Rajesh Sharma
+        </p>
+        <p class="text-gray-500 text-[10px]">
+         Patna, India
+        </p>
+       </div>
+      </div>
+      <p>
+       "I hired Ripay Creations for my home renovation and I am extremely pleased with the results. The team was professional, attentive, and delivered on time. Highly recommend!"
+      </p>
+      <div class="mt-3 text-orange-500">
+       <i class="fas fa-star">
+       </i>
+       <i class="fas fa-star">
+       </i>
+       <i class="fas fa-star">
+       </i>
+       <i class="fas fa-star">
+       </i>
+       <i class="fas fa-star">
+       </i>
+      </div>
+     </div>
+     <!-- Testimonial 2 -->
+     <div class="bg-gray-100 rounded-lg p-6 text-xs sm:text-sm text-gray-700">
+      <div class="flex items-center mb-3">
+       <img alt="Priya Patel profile picture" class="rounded-full mr-3" height="40" src="https://storage.googleapis.com/a1aa/image/db55d03a-64eb-472c-386e-feb87a8836d3.jpg" width="40"/>
+       <div>
+        <p class="font-semibold text-gray-900">
+         Priya Patel
+        </p>
+        <p class="text-gray-500 text-[10px]">
+         Patna, India
+        </p>
+       </div>
+      </div>
+      <p>
+       "The designers at Ripay Creations truly understood my vision and brought it to life. The furniture quality and design exceeded my expectations."
+      </p>
+      <div class="mt-3 text-orange-500">
+       <i class="fas fa-star">
+       </i>
+       <i class="fas fa-star">
+       </i>
+       <i class="fas fa-star">
+       </i>
+       <i class="fas fa-star">
+       </i>
+       <i class="fas fa-star">
+       </i>
+      </div>
+     </div>
+     <!-- Testimonial 3 -->
+     <div class="bg-gray-100 rounded-lg p-6 text-xs sm:text-sm text-gray-700">
+      <div class="flex items-center mb-3">
+       <img alt="Vikram Mehta profile picture" class="rounded-full mr-3" height="40" src="https://storage.googleapis.com/a1aa/image/a7f29f4d-ba05-4982-4068-1deef6147234.jpg" width="40"/>
+       <div>
+        <p class="font-semibold text-gray-900">
+         Vikram Mehta
+        </p>
+        <p class="text-gray-500 text-[10px]">
+         Patna, India
+        </p>
+       </div>
+      </div>
+      <p>
+       "Excellent service and attention to detail. The team was very responsive and made sure everything was perfect. I am very happy with my new home interiors."
+      </p>
+      <div class="mt-3 text-orange-500">
+       <i class="fas fa-star">
+       </i>
+       <i class="fas fa-star">
+       </i>
+       <i class="fas fa-star">
+       </i>
+       <i class="fas fa-star">
+       </i>
+       <i class="fas fa-star">
+       </i>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <!-- Contact Us Section -->
+   <section id="contact-section" class="mt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20">
+    <h2 class="text-center text-gray-900 font-semibold text-lg sm:text-xl mb-6">
+     Contact Us
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+     <!-- Contact Form Card -->
+     <div class="bg-white rounded-lg shadow-md p-6 text-xs sm:text-sm flex flex-col">
+      <h3 class="font-semibold text-gray-900 mb-4">
+       Get Free Consultation
+      </h3>
+      <form id="contactForm" class="space-y-4 flex flex-col flex-grow">
+       <div>
+        <label for="contactName" class="block font-semibold mb-1 text-gray-700">Name</label>
+        <input type="text" id="contactName" name="contactName" required class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Enter your full name"/>
+       </div>
+       <div>
+        <label for="contactPhone" class="block font-semibold mb-1 text-gray-700">Phone</label>
+        <input type="tel" id="contactPhone" name="contactPhone" required class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Enter your phone number"/>
+       </div>
+       <div>
+        <label for="contactRequirements" class="block font-semibold mb-1 text-gray-700">Your Requirements</label>
+        <textarea id="contactRequirements" name="contactRequirements" rows="3" required class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Tell us about your project and requirements"></textarea>
+       </div>
+       <button type="submit" class="bg-orange-500 text-white font-semibold px-6 py-2 rounded-md hover:bg-orange-600 transition w-full mt-auto">
+        Submit Request
+       </button>
+      </form>
+     </div>
+     <!-- Contact Info Card -->
+     <div class="bg-white rounded-lg shadow-md p-6 text-xs sm:text-sm space-y-6 flex flex-col">
+      <h3 class="font-semibold text-gray-900 mb-4">
+       Contact Information
+      </h3>
+      <div class="flex items-start space-x-3">
+       <i class="fas fa-map-marker-alt text-orange-500 mt-1">
+       </i>
+       <div>
+        <p class="font-semibold">
+         Visit Us
+        </p>
+        <p>
+         Sharda Rajendra Enclave, Bank Colony, Patna 801503
+        </p>
+       </div>
+      </div>
+      <div class="flex items-start space-x-3">
+       <i class="fas fa-phone-alt text-orange-500 mt-1">
+       </i>
+       <div>
+        <p class="font-semibold">
+         Call Us
+        </p>
+        <p>
+         +91 9304 1212 25
+        </p>
+        <p>
+         Mon - Fri: 9:00 AM - 7:00 PM
+        </p>
+       </div>
+      </div>
+      <div class="flex items-start space-x-3">
+       <i class="fas fa-envelope text-orange-500 mt-1">
+       </i>
+       <div>
+        <p class="font-semibold">
+         Email Us
+        </p>
+        <p>
+         ripay.creation@gmail.com
+        </p>
+       </div>
+      </div>
+      <a href="#" id="whatsappContact" target="_blank" rel="noopener" class="bg-green-500 text-white font-semibold px-6 py-2 rounded-md hover:bg-green-600 transition w-full flex items-center justify-center space-x-2" style="min-height: 44px;">
+       <i class="fab fa-whatsapp text-lg"></i>
+       <span>Connect with WhatsApp</span>
+      </a>
+     </div>
+    </div>
+   </section>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-white mt-20 py-10 text-xs sm:text-sm text-gray-600">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-4 gap-8">
+    <div>
+     <h4 class="font-semibold text-gray-900 mb-3">
+      Ripay Creations
+     </h4>
+     <p>
+      Innovative designs that reflect your taste and transform living spaces by craftsmanship and quality.
+     </p>
+     <div class="flex space-x-3 mt-4 text-gray-600 text-lg">
+      <a aria-label="Facebook" class="hover:text-orange-500" href="#">
+       <i class="fab fa-facebook-f">
+       </i>
+      </a>
+      <a aria-label="Twitter" class="hover:text-orange-500" href="#">
+       <i class="fab fa-twitter">
+       </i>
+      </a>
+      <a aria-label="Instagram" class="hover:text-orange-500" href="#">
+       <i class="fab fa-instagram">
+       </i>
+      </a>
+      <a aria-label="LinkedIn" class="hover:text-orange-500" href="#">
+       <i class="fab fa-linkedin-in">
+       </i>
+      </a>
+     </div>
+    </div>
+    <div>
+     <h4 class="font-semibold text-gray-900 mb-3">
+      Our Services
+     </h4>
+     <ul class="space-y-2">
+      <li>
+       <a class="hover:text-orange-500" href="#interior-design-services">
+        Modular Kitchen
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-orange-500" href="#interior-design-services">
+        Living Room Makeover
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-orange-500" href="#interior-design-services">
+        Bedroom Interiors
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-orange-500" href="#interior-design-services">
+        Pooja Room
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-orange-500" href="#interior-design-services">
+        Modular Wardrobe
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-orange-500" href="#interior-design-services">
+        TV Cabinets
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div>
+     <h4 class="font-semibold text-gray-900 mb-3">
+      Quick Links
+     </h4>
+     <ul class="space-y-2">
+      <li>
+       <a class="hover:text-orange-500" href="#top">
+        About Us
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-orange-500" href="#project-gallery">
+        Projects
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-orange-500" href="#testimonial-section">
+        Testimonials
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-orange-500" href="#packages-section">
+        Packages
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-orange-500" href="#blog-section">
+        Blog
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-orange-500" href="#contact-section">
+        Contact
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div>
+     <h4 class="font-semibold text-gray-900 mb-3">
+      Contact Us
+     </h4>
+     <p>
+      <i class="fas fa-map-marker-alt mr-2 text-orange-500">
+      </i>
+      Sharda Rajendra Enclave, Bank Colony, Patna 801503
+     </p>
+     <p class="mt-2">
+      <i class="fas fa-phone-alt mr-2 text-orange-500">
+      </i>
+      +91 9304 1212 25
+     </p>
+     <p class="mt-2">
+      <i class="fas fa-envelope mr-2 text-orange-500">
+      </i>
+      ripay.creation@gmail.com
+     </p>
+    </div>
+   </div>
+   <div class="mt-8 border-t border-gray-200 pt-4 text-center text-gray-500 text-xs">
+    © 2023 Ripay Creations. All rights reserved.
+    <div class="mt-1 space-x-2">
+     <a class="hover:text-orange-500" href="#">
+      Privacy Policy
+     </a>
+     |
+     <a class="hover:text-orange-500" href="#">
+      Terms and Conditions
+     </a>
+    </div>
+   </div>
+   <button aria-label="Scroll to top" class="fixed bottom-6 right-6 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg text-lg" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i class="fas fa-arrow-up">
+    </i>
+   </button>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+   <div class="bg-white rounded-lg shadow-lg w-11/12 max-w-md p-6 relative">
+    <button id="closeModal" class="absolute top-3 right-3 text-gray-600 hover:text-gray-900 text-lg font-bold" aria-label="Close modal">&times;</button>
+    <h3 class="text-lg font-semibold mb-4 text-gray-900">Get Free Consultation</h3>
+    <form id="consultationForm" class="space-y-4 text-xs sm:text-sm">
+     <div>
+      <label for="modalName" class="block font-semibold mb-1 text-gray-700">Name</label>
+      <input type="text" id="modalName" name="modalName" required class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Enter your full name"/>
+     </div>
+     <div>
+      <label for="modalPhone" class="block font-semibold mb-1 text-gray-700">Phone</label>
+      <input type="tel" id="modalPhone" name="modalPhone" required class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Enter your phone number"/>
+     </div>
+     <div>
+      <label for="modalRequirements" class="block font-semibold mb-1 text-gray-700">Your Requirements</label>
+      <textarea id="modalRequirements" name="modalRequirements" rows="3" required class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Tell us about your project and requirements"></textarea>
+     </div>
+     <div class="flex space-x-4">
+      <button type="submit" class="bg-orange-500 text-white font-semibold px-6 py-2 rounded-md hover:bg-orange-600 transition flex-1">
+       Submit Request
+      </button>
+      <a href="#" id="whatsappModal" target="_blank" rel="noopener" class="bg-green-500 text-white font-semibold px-6 py-2 rounded-md hover:bg-green-600 transition flex-1 flex items-center justify-center space-x-2">
+       <i class="fab fa-whatsapp text-lg"></i>
+       <div class="text-center leading-tight">
+        <div>Connect with</div>
+        <div>WhatsApp</div>
+       </div>
+      </a>
+     </div>
+    </form>
+   </div>
+  </div>
+
+  <!-- External JS -->
+  <script src="form-handler.js" defer></script>
+ </body>
+</html>

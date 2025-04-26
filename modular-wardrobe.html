@@ -1,0 +1,450 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Modular Wardrobe
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Inter', sans-serif;
+    }
+   /* Hide scrollbar for Chrome, Safari and Opera */
+   .no-scrollbar::-webkit-scrollbar {
+     display: none;
+   }
+   /* Hide scrollbar for IE, Edge and Firefox */
+   .no-scrollbar {
+     -ms-overflow-style: none;  /* IE and Edge */
+     scrollbar-width: none;  /* Firefox */
+   }
+  </style>
+ </head>
+ <body class="bg-[#e9f0ef] text-gray-800">
+  <header class="bg-white shadow-sm sticky top-0 z-50 h-20 flex items-center">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <div class="flex justify-between items-center h-16">
+     <div class="flex items-center space-x-6">
+      <a class="text-orange-500 font-semibold text-lg cursor-pointer" id="logoLink" href="index.html#top">
+       Ripay Creations
+      </a>
+      <nav class="hidden md:flex space-x-6 text-xs font-semibold text-gray-700">
+       <a class="hover:text-orange-500" href="index.html#top" id="homeLink">
+        Home
+       </a>
+       <a class="hover:text-orange-500" href="#interior-design-services">
+        Services
+       </a>
+       <a class="hover:text-orange-500" href="#packages-section">
+        Packages
+       </a>
+       <a class="hover:text-orange-500" href="#project-gallery">
+        Gallery
+       </a>
+       <a class="hover:text-orange-500" href="#testimonial-section">
+        Testimonials
+       </a>
+       <a class="hover:text-orange-500" href="#contact-section">
+        Contact
+       </a>
+      </nav>
+     </div>
+     <div>
+      <a class="bg-orange-500 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:bg-orange-600 transition cursor-pointer" id="openModalHeader">
+       Free Consultation
+      </a>
+     </div>
+    </div>
+   </div>
+  </header>
+  <main id="top" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+   <!-- Hero Section -->
+   <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="md:col-span-2 bg-[#e9f0ef] rounded-lg p-6 flex flex-col justify-center">
+     <h1 class="text-gray-900 font-extrabold text-2xl sm:text-3xl leading-tight mb-3">
+      Organize Your Life with a Stylish Wardrobe
+     </h1>
+     <p class="text-gray-600 text-sm sm:text-base max-w-xl mb-6">
+      Discover modular wardrobe solutions that maximize space and reflect your personal style.
+     </p>
+     <div class="flex flex-wrap gap-3">
+      <a class="bg-orange-500 text-white text-xs sm:text-sm font-semibold px-5 py-2 rounded-md hover:bg-orange-600 transition cursor-pointer" id="openModal">
+       Get Free Consultation
+      </a>
+      <a class="border border-gray-300 text-gray-700 text-xs sm:text-sm font-semibold px-5 py-2 rounded-md hover:bg-gray-100 transition" href="#interior-design-services" style="">
+       Explore Services
+      </a>
+     </div>
+    </div>
+    <div class="relative bg-[#e9f0ef] rounded-lg flex items-center justify-center overflow-hidden" style="height: 320px;">
+     <div id="carousel" class="flex w-full snap-x snap-mandatory overflow-x-auto scroll-smooth" style="scroll-behavior: smooth; scroll-padding-left: 0;">
+      <img alt="Modern living room with stylish furniture and warm lighting" class="rounded-lg object-cover flex-shrink-0 snap-center" height="320" src="https://storage.googleapis.com/a1aa/image/3ee4b55f-e6bd-4a9c-c390-f9f3f29b334f.jpg" style="width: 700px; height: 320px;" width="700"/>
+      <img alt="Cozy living room with modern furniture and warm lighting" class="rounded-lg object-cover flex-shrink-0 snap-center" height="320" src="https://storage.googleapis.com/a1aa/image/8d5e4871-af88-4a47-f1aa-bf56899463a6.jpg" style="width: 700px; height: 320px;" width="700"/>
+      <img alt="Stylish bedroom interior with modern furniture and soft lighting" class="rounded-lg object-cover flex-shrink-0 snap-center" height="320" src="https://storage.googleapis.com/a1aa/image/3ae8c51d-d76f-429f-eb0c-4402b60898d2.jpg" style="width: 700px; height: 320px;" width="700"/>
+     </div>
+     <button aria-label="Previous slide" class="absolute left-3 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-100 text-gray-600 rounded-full p-2 shadow" id="prevBtn" style="user-select:none;">
+      <i class="fas fa-chevron-left">
+      </i>
+     </button>
+     <button aria-label="Next slide" class="absolute right-3 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-100 text-gray-600 rounded-full p-2 shadow" id="nextBtn" style="user-select:none;">
+      <i class="fas fa-chevron-right">
+      </i>
+     </button>
+     <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex space-x-2 text-gray-400 text-xs" id="dots">
+      <span class="w-2 h-2 rounded-full bg-gray-400 cursor-pointer" data-index="0">
+      </span>
+      <span class="w-2 h-2 rounded-full bg-gray-300 cursor-pointer" data-index="1">
+      </span>
+      <span class="w-2 h-2 rounded-full bg-gray-300 cursor-pointer" data-index="2">
+      </span>
+     </div>
+    </div>
+   </section>
+  <section class="max-w-7xl mx-auto p-6 sm:p-10 md:p-16">
+   <div class="text-center max-w-3xl mx-auto mb-10">
+    <h2 class="text-xl sm:text-2xl font-semibold text-[#0f172a] mb-2">
+     Key Features of Our Modular Wardrobes
+    </h2>
+    <p class="text-[13px] text-[#475569] font-normal">
+     Every wardrobe we design combines functionality with style, ensuring you get the most out of your space.
+    </p>
+   </div>
+   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <div class="bg-white rounded-lg shadow-md overflow-hidden p-6">
+     <div class="w-8 h-8 bg-orange-200 rounded-full flex items-center justify-center mb-3">
+      <i class="fas fa-tshirt text-orange-500 text-[14px]">
+      </i>
+     </div>
+     <h3 class="font-semibold text-[14px] text-[#0f172a] mb-1">
+      Customizable Layouts
+     </h3>
+     <p class="text-[12px] text-[#475569] font-normal">
+      Design your wardrobe with adjustable shelves, drawers, and hanging rods.
+     </p>
+    </div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden p-6">
+     <div class="w-8 h-8 bg-orange-200 rounded-full flex items-center justify-center mb-3">
+      <i class="fas fa-鏡 text-orange-500 text-[14px]">
+      </i>
+     </div>
+     <h3 class="font-semibold text-[14px] text-[#0f172a] mb-1">
+      Integrated Mirrors
+     </h3>
+     <p class="text-[12px] text-[#475569] font-normal">
+      Full-length mirrors that save space and add elegance to your wardrobe.
+     </p>
+    </div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden p-6">
+     <div class="w-8 h-8 bg-orange-200 rounded-full flex items-center justify-center mb-3">
+      <i class="fas fa-shoe-prints text-orange-500 text-[14px]">
+      </i>
+     </div>
+     <h3 class="font-semibold text-[14px] text-[#0f172a] mb-1">
+      Specialized Compartments
+     </h3>
+     <p class="text-[12px] text-[#475569] font-normal">
+      Dedicated sections for shoes, accessories, and seasonal clothing.
+     </p>
+    </div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden p-6">
+     <div class="w-8 h-8 bg-orange-200 rounded-full flex items-center justify-center mb-3">
+      <i class="fas fa-lightbulb text-orange-500 text-[14px]">
+      </i>
+     </div>
+     <h3 class="font-semibold text-[14px] text-[#0f172a] mb-1">
+      Built-in Lighting
+     </h3>
+     <p class="text-[12px] text-[#475569] font-normal">
+      Energy-efficient lighting solutions that illuminate your wardrobe's contents.
+     </p>
+    </div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden p-6">
+     <div class="w-8 h-8 bg-orange-200 rounded-full flex items-center justify-center mb-3">
+      <i class="fas fa-lock text-orange-500 text-[14px]">
+      </i>
+     </div>
+     <h3 class="font-semibold text-[14px] text-[#0f172a] mb-1">
+      Secure Storage
+     </h3>
+     <p class="text-[12px] text-[#475569] font-normal">
+      Lockable drawers and compartments for your valuables.
+     </p>
+    </div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden p-6">
+     <div class="w-8 h-8 bg-orange-200 rounded-full flex items-center justify-center mb-3">
+      <i class="fas fa-hand-holding-heart text-orange-500 text-[14px]">
+      </i>
+     </div>
+     <h3 class="font-semibold text-[14px] text-[#0f172a] mb-1">
+      Lifetime Support
+     </h3>
+     <p class="text-[12px] text-[#475569] font-normal">
+      Ongoing support and maintenance for your modular wardrobe.
+     </p>
+    </div>
+   </div>
+  </section>
+  <section class="max-w-7xl mx-auto p-6 sm:p-10 md:p-16 bg-[#ecf0f2] rounded-lg">
+   <div class="text-center max-w-4xl mx-auto mb-10">
+    <h2 class="text-xl sm:text-2xl font-semibold text-[#0f172a] mb-2">
+     Our Wardrobe Design Process
+    </h2>
+    <p class="text-[13px] text-[#475569] font-normal">
+     We follow a systematic approach to ensure your dream wardrobe becomes reality.
+    </p>
+   </div>
+   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+    <div class="bg-white rounded-lg shadow-md overflow-hidden p-6 text-center relative">
+     <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+      <i class="fas fa-comments text-orange-500 text-lg">
+       </i>
+     </div>
+     <h3 class="font-semibold text-[14px] text-[#0f172a] mb-2">
+      Consultation & Planning
+     </h3>
+     <p class="text-[12px] text-[#475569] font-normal">
+      Discussing your storage needs and style preferences.
+     </p>
+    </div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden p-6 text-center relative">
+     <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+      <i class="fas fa-ruler-vertical text-orange-500 text-lg">
+       </i>
+     </div>
+     <h3 class="font-semibold text-[14px] text-[#0f172a] mb-2">
+      Measurement & Design
+     </h3>
+     <p class="text-[12px] text-[#475569] font-normal">
+      Accurate measurements and customized design to fit your space.
+     </p>
+    </div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden p-6 text-center relative">
+     <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+      <i class="fas fa-tools text-orange-500 text-lg">
+       </i>
+     </div>
+     <h3 class="font-semibold text-[14px] text-[#0f172a] mb-2">
+      Assembly & Installation
+     </h3>
+     <p class="text-[12px] text-[#475569] font-normal">
+      Expert assembly and installation by our skilled technicians.
+     </p>
+    </div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden p-6 text-center relative">
+     <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+      <i class="fas fa-check-circle text-orange-500 text-lg">
+       </i>
+     </div>
+     <h3 class="font-semibold text-[14px] text-[#0f172a] mb-2">
+      Final Inspection
+     </h3>
+     <p class="text-[12px] text-[#475569] font-normal">
+      Ensuring every detail meets our quality standards and your satisfaction.
+     </p>
+    </div>
+   </div>
+  </section>
+  <section class="max-w-7xl mx-auto p-6 sm:p-10 md:p-16" id="recent-projects">
+   <div class="text-center max-w-3xl mx-auto mb-10">
+    <h2 class="text-xl sm:text-2xl font-semibold text-[#0f172a] mb-2">
+     Premium Materials We Use For Wardrobes
+    </h2>
+    <p class="text-[13px] text-[#475569] font-normal">
+     Only the highest quality materials are used in our modular wardrobes.
+    </p>
+   </div>
+   <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+     <img alt="Wooden plywood panel in modern living room interior with TV and shelves" class="w-full h-auto object-cover rounded-t-lg" height="200" src="https://storage.googleapis.com/a1aa/image/1858cf15-281c-4c89-48d0-bdd955eb5550.jpg" width="400"/>
+     <div class="p-4">
+      <h3 class="font-semibold text-[14px] text-[#0f172a] mb-1">
+       BWP Grade Plywood
+      </h3>
+      <p class="text-[12px] text-[#475569] font-normal">
+       Moisture-resistant plywood for durability in humid conditions.
+      </p>
+     </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+     <img alt="Modern kitchen with wooden cabinets and island with plants and kitchenware" class="w-full h-auto object-cover rounded-t-lg" height="200" src="https://storage.googleapis.com/a1aa/image/02ff18f3-b467-42ca-43d9-a32088d584a7.jpg" width="400"/>
+     <div class="p-4">
+      <h3 class="font-semibold text-[14px] text-[#0f172a] mb-1">
+       Imported Hardware
+      </h3>
+      <p class="text-[12px] text-[#475569] font-normal">
+       High-quality hinges, handles, and fittings from leading brands.
+      </p>
+     </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+     <img alt="Luxury living room with designer countertops, sofa, and TV with large windows" class="w-full h-auto object-cover rounded-t-lg" height="200" src="https://storage.googleapis.com/a1aa/image/d6db6fe0-d29a-4eeb-a7e1-6541075d0fb1.jpg" width="400"/>
+     <div class="p-4">
+      <h3 class="font-semibold text-[14px] text-[#0f172a] mb-1">
+       Designer Countertops
+      </h3>
+      <p class="text-[12px] text-[#475569] font-normal">
+       Premium granite, quartz, and solid surface options available.
+      </p>
+     </div>
+    </div>
+   </div>
+  </section>
+  <footer class="bg-white mt-20 py-10 text-xs sm:text-sm text-gray-600">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-4 gap-8">
+    <div>
+     <h4 class="font-semibold text-gray-900 mb-3">
+      Ripay Creations
+     </h4>
+     <p>
+      Innovative designs that reflect your taste and transform living spaces by craftsmanship and quality.
+     </p>
+     <div class="flex space-x-3 mt-4 text-gray-600 text-lg">
+      <a aria-label="Facebook" class="hover:text-orange-500" href="#">
+       <i class="fab fa-facebook-f">
+       </i>
+      </a>
+      <a aria-label="Twitter" class="hover:text-orange-500" href="#">
+       <i class="fab fa-twitter">
+       </i>
+      </a>
+      <a aria-label="Instagram" class="hover:text-orange-500" href="#">
+       <i class="fab fa-instagram">
+       </i>
+      </a>
+      <a aria-label="LinkedIn" class="hover:text-orange-500" href="#">
+       <i class="fab fa-linkedin-in">
+       </i>
+      </a>
+     </div>
+    </div>
+    <div>
+     <h4 class="font-semibold text-gray-900 mb-3">
+      Our Services
+     </h4>
+     <ul class="space-y-2">
+      <li>
+       <a class="hover:text-orange-500" href="#interior-design-services">
+        Modular Kitchen
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-orange-500" href="#interior-design-services">
+        Living Room Makeover
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-orange-500" href="#interior-design-services">
+        Bedroom Interiors
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-orange-500" href="#interior-design-services">
+        Pooja Room
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-orange-500" href="#interior-design-services">
+        Modular Wardrobe
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-orange-500" href="#interior-design-services">
+        TV Cabinets
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div>
+     <h4 class="font-semibold text-gray-900 mb-3">
+      Quick Links
+     </h4>
+     <ul class="space-y-2">
+      <li>
+       <a class="hover:text-orange-500" href="#top">
+        About Us
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-orange-500" href="#project-gallery">
+        Projects
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-orange-500" href="#testimonial-section">
+        Testimonials
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-orange-500" href="#packages-section">
+        Packages
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-orange-500" href="#blog-section">
+        Blog
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-orange-500" href="#contact-section">
+        Contact
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div>
+     <h4 class="font-semibold text-gray-900 mb-3">
+      Contact Us
+     </h4>
+     <p>
+      <i class="fas fa-map-marker-alt mr-2 text-orange-500">
+       </i>
+      Sharda Rajendra Enclave, Bank Colony, Patna 801503
+     </p>
+     <p class="mt-2">
+      <i class="fas fa-phone-alt mr-2 text-orange-500">
+       </i>
+      +91 9304 1212 25
+     </p>
+     <p class="mt-2">
+      <i class="fas fa-envelope mr-2 text-orange-500">
+       </i>
+      ripay.creation@gmail.com
+     </p>
+    </div>
+   </div>
+   <div class="mt-8 border-t border-gray-200 pt-4 text-center text-gray-500 text-xs">
+    © 2023 Ripay Creations. All rights reserved.
+    <div class="mt-1 space-x-2">
+     <a class="hover:text-orange-500" href="#">
+      Privacy Policy
+     </a>
+     |
+     <a class="hover:text-orange-500" href="#">
+      Terms and Conditions
+     </a>
+    </div>
+   </div>
+   <button aria-label="Scroll to top" class="fixed bottom-6 right-6 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg text-lg" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+     <i class="fas fa-arrow-up">
+     </i>
+    </button>
+  </footer>
+  <script>
+   function scrollToCenter(id) {
+     const element = document.getElementById(id);
+     if (!element) return;
+     const elementRect = element.getBoundingClientRect();
+     const absoluteElementTop = elementRect.top + window.pageYOffset;
+     const middle = absoluteElementTop - (window.innerHeight / 2) + (elementRect.height / 2);
+     window.scrollTo({
+       top: middle,
+       behavior: 'smooth'
+     });
+   }
+  </script>
+ </body>
+</html>
